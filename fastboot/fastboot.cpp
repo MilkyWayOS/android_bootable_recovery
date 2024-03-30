@@ -44,9 +44,6 @@ void FailFastbootd(Device* device){
   ui->Print("Hold power button to reboot the device.");
 }
 
-Device::BuiltinAction StartFastboot(Device* device, const std::vector<std::string>& /* args */) {
-  RecoveryUI* ui = device->GetUI();
-
 void FillDefaultFastbootLines(std::vector<std::string>& title_lines) {
   std::string bootloader_version = android::base::GetProperty("ro.bootloader", "");
   std::string baseband_version = android::base::GetProperty("ro.build.expect.baseband", "");
